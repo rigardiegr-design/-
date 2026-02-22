@@ -1,0 +1,311 @@
+{
+  "version": 1,
+  "author": "MSCDR - Arduino Obstacle Avoidance (UNO + L298N + HC-SR04 + LED/Buzzer)",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 60,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sonar",
+      "top": -110,
+      "left": -210,
+      "attrs": {
+        "distance": "120"
+      }
+    },
+    {
+      "type": "chip-l298n",
+      "id": "drv",
+      "top": -20,
+      "left": 240,
+      "attrs": {
+        "Vs": 12
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledOut1",
+      "top": -150,
+      "left": 540,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rOut1",
+      "top": -150,
+      "left": 600,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledOut2",
+      "top": -110,
+      "left": 540,
+      "attrs": {
+        "color": "yellow"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rOut2",
+      "top": -110,
+      "left": 600,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledOut3",
+      "top": -70,
+      "left": 540,
+      "attrs": {
+        "color": "limegreen"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rOut3",
+      "top": -70,
+      "left": 600,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledOut4",
+      "top": -30,
+      "left": 540,
+      "attrs": {
+        "color": "cyan"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rOut4",
+      "top": -30,
+      "left": 600,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ledInd",
+      "top": 170,
+      "left": 540,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rInd",
+      "top": 170,
+      "left": 600,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzz",
+      "top": 250,
+      "left": 560,
+      "attrs": {
+        "mode": "smooth",
+        "volume": "1.0"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "uno:5V",
+      "sonar:VCC",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "sonar:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:2",
+      "sonar:TRIG",
+      "green",
+      []
+    ],
+    [
+      "uno:3",
+      "sonar:ECHO",
+      "green",
+      []
+    ],
+    [
+      "uno:5V",
+      "drv:5V",
+      "red",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "drv:GND",
+      "black",
+      []
+    ],
+    [
+      "uno:5",
+      "drv:EN A",
+      "green",
+      []
+    ],
+    [
+      "uno:8",
+      "drv:IN1",
+      "green",
+      []
+    ],
+    [
+      "uno:7",
+      "drv:IN2",
+      "green",
+      []
+    ],
+    [
+      "uno:6",
+      "drv:EN B",
+      "green",
+      []
+    ],
+    [
+      "uno:4",
+      "drv:IN3",
+      "green",
+      []
+    ],
+    [
+      "uno:9",
+      "drv:IN4",
+      "green",
+      []
+    ],
+    [
+      "drv:OUT1",
+      "ledOut1:A",
+      "green",
+      []
+    ],
+    [
+      "ledOut1:C",
+      "rOut1:1",
+      "black",
+      []
+    ],
+    [
+      "rOut1:2",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "drv:OUT2",
+      "ledOut2:A",
+      "green",
+      []
+    ],
+    [
+      "ledOut2:C",
+      "rOut2:1",
+      "black",
+      []
+    ],
+    [
+      "rOut2:2",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "drv:OUT3",
+      "ledOut3:A",
+      "green",
+      []
+    ],
+    [
+      "ledOut3:C",
+      "rOut3:1",
+      "black",
+      []
+    ],
+    [
+      "rOut3:2",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "drv:OUT4",
+      "ledOut4:A",
+      "green",
+      []
+    ],
+    [
+      "ledOut4:C",
+      "rOut4:1",
+      "black",
+      []
+    ],
+    [
+      "rOut4:2",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "uno:12",
+      "ledInd:A",
+      "green",
+      []
+    ],
+    [
+      "ledInd:C",
+      "rInd:1",
+      "black",
+      []
+    ],
+    [
+      "rInd:2",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "uno:GND.1",
+      "buzz:1",
+      "black",
+      []
+    ],
+    [
+      "uno:13",
+      "buzz:2",
+      "green",
+      []
+    ]
+  ],
+  "dependencies": {
+    "chip-l298n": "github:drf5n/Wokwi-Chip-L298N@1.0.5"
+  }
+}
